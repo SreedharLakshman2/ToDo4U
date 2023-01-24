@@ -8,14 +8,30 @@
 import UIKit
 
 class ToDoListViewController: UITableViewController {
-    var items: [String] = [" python class", "VocabularyClass","BugFIx"]
-
+    var items: [String]? = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("viewDidLoad")
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style:.plain, target: self, action: #selector(onClickMessageButton))]
     }
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        
+     print("viewWillLayoutSubviews")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
+    }
+    
+    @objc func onClickMessageButton() {
+        print("Message")
+    }
 }
 
 extension ToDoListViewController {
@@ -25,7 +41,15 @@ extension ToDoListViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return items?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "ToDoTableViewCell", for: indexPath) as? ToDoTableViewCell
+        if let itemArray = items {
+            cell?.todoListLabel.text = itemArray[indexPath.row]
+        }
+        return cell ?? UITableViewCell()
     }
     
 }
