@@ -95,7 +95,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         label.frame = CGRect.init(x: 5, y: 5, width: footerView.frame.width-10, height: footerView.frame.height-10)
         label.text = (section == 0 && toDoListViewModel.toDoArray.count == 0) ? "NoData" : (section == 1 && toDoListViewModel.completedtaskArray.count == 0) ? "NoData" : ""
         label.textColor = .systemIndigo
-        label.font = UIFont(name: "SparkyStones-Regular", size: 10)
+        label.font = UIFont(name: "SparkyStones-Regular", size: 15)
         label.contentMode = .center
         footerView.addSubview(label)
         

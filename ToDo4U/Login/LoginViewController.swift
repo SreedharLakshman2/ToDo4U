@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonAction(_ sender: Any) {
         
-        if (emailTextField.text != loginViewModel.loginUserName) && (passwordTextField.text != loginViewModel.loginPassword) {
+        if (emailTextField.text == loginViewModel.loginUserName) && (passwordTextField.text == loginViewModel.loginPassword) {
             print("Success")
             UserDefaults.standard.set(true, forKey: "UserAlreadyLoggedIn")
             let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)

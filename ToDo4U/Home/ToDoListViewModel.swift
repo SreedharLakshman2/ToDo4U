@@ -12,6 +12,4 @@ class ToDoListViewModel {
     var toDoArray: [ToDoItemModel] = []
     var completedtaskArray: [ToDoItemModel] = []
     
-    
-    
 }
