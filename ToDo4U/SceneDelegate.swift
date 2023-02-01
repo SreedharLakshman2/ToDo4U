@@ -49,6 +49,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
+    
+    /*func manageLoginSession() {
+        guard let window = window else {return}
+        let isLoggedIn = UserDefaults.standard.value(forKey: "UserAlreadyLoggedIn") as? Bool ?? false
+        if isLoggedIn {
+            window.rootViewController = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController()
+        }else{
+            window.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        }
+    }*/
 
 
 }
